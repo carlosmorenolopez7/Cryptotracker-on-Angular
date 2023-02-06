@@ -1,0 +1,48 @@
+<div class="main" *ngIf="moneda != null">
+    <div class="moneda__main">
+        <img src="{{moneda.image.small}}" alt="imagen del producto">
+        <h2 *ngIf="moneda.name != ''">{{moneda.name}}</h2>
+        <p>${{moneda.symbol}}</p>
+    </div>
+    <div class="precios">
+        <h2 *ngIf="moneda.market_data.current_price.eur != ''">Precio actual: {{moneda.market_data.current_price.eur.toLocaleString()}} €</h2>
+        <div class="preciosDiv">
+            <div class="negativo">
+                <label for="negativo"><b>Valor más bajo (24h)</b></label>
+                <p name="positivo" class="negativo" *ngIf="moneda.market_data.low_24h.eur != ''">{{moneda.market_data.low_24h.eur.toLocaleString()}} €</p>
+            </div>
+            <div class="positivo">
+                <label for="positivo"><b>Valor más alto (24h)</b></label>
+                <p class="positivo" name="positivo" *ngIf="moneda.market_data.high_24h.eur != ''">{{moneda.market_data.high_24h.eur.toLocaleString()}} €</p>
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        <h2>Descripción: </h2>
+        <p *ngIf="moneda.description.es != ''">{{moneda.description.es}}</p>
+        <p *ngIf="moneda.description.es == ''">{{moneda.description.en}}</p>
+        <p *ngIf="moneda.description.en == '' && moneda.description.es == ''">Descripción no disponible</p>
+    </div>
+    <div class="links">
+        <h2>Enlaces: </h2>
+        <ul class="links_pages">
+            <ul *ngIf="moneda.links.homepage[0] != ''">
+                <a [href]="moneda.links.homepage[0]"><img style="width: 30px;" src="{{moneda.image.small}}" alt="imagen del producto"> {{moneda.name}}</a>
+            </ul>
+            <ul *ngIf="moneda.links.repos_url.github.length > 0">
+                <i class="fa-brands fa-github"></i><a [href]="moneda.links.repos_url.github[0]"> {{moneda.name}} Github</a> 
+            </ul>
+            <ul *ngIf="moneda.links.twitter_screen_name != ''">
+                <i class="fa-brands fa-twitter"></i><a [href]="'https://twitter.com/'+moneda.links.twitter_screen_name"> {{moneda.name}} Twitter</a>
+            </ul>
+            <ul *ngIf="moneda.links.facebook_username != ''">
+                <i class="fa-brands fa-facebook"></i><a [href]="'https://facebook.com/'+moneda.links.facebook_username"> {{moneda.name}} Facebook</a>
+            </ul>
+        </ul>
+    </div>
+    <div class="descripcion"></div>
+    <div class="volver">
+        <a routerLink="/portfolio">Volver</a>
+    </div>
+    
+</div>

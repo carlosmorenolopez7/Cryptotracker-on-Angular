@@ -1,0 +1,23 @@
+.form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+button{
+    background-color: grey;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

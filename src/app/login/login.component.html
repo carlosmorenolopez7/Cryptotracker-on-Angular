@@ -1,0 +1,15 @@
+<form class="form">
+    <div class="form-group">
+        <input type="text" class="form-control" name="email" id="username" placeholder="Nombre de usuario" [(ngModel)]="email">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" [(ngModel)]="password">
+    </div>
+    <br>
+    <div class="form-group botones">
+        <button class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+        <button class="btn btn-primary" (click)="registrarse()">Registrate</button>
+        <button class="btn btn-primary" id="googleBtn" (click)="iniciarSesionGoogle()">Iniciar sesión con Google</button>
+    </div>
+</form>

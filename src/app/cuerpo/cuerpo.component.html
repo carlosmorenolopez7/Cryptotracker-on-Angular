@@ -1,0 +1,42 @@
+<div class="main">
+    <div id="barraFiltrado">
+        <h3>Buscar criptomoneda:</h3>
+        <input type="text" [(ngModel)]="palabra_filtrar" (keyup)="filtrarPorNombre()" name="filtrar">
+        <button style="margin-left: 1%;" class="btn btn-primary" *ngIf="arrayFiltrado.length > 0" (click)="anadirParaBuscar('cerrarLista')">Eliminar búsqueda X</button>
+        <ul id="barraFiltradoUl">
+            <li *ngFor="let moneda of arrayFiltrado">
+                <img [src]="moneda.image.small" [alt]="moneda.name">
+                {{moneda.name}} <button (click)="anadirParaBuscar(moneda.id)"><i class="fa-solid fa-heart"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div id="fav" *ngIf="!crypto.length">
+        <h3>No hay monedas guardadas</h3>
+    </div>
+    <div id="fav" *ngIf="crypto.length">
+        <h3>Monedas guardadas</h3>
+        <table>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cambio</th>
+                <th>Suministro</th>
+                <th>Volumen (24h)</th>
+                <th>Detalles</th>
+                <th>Eliminar de favoritas</th>
+            </tr>
+            <tr *ngFor="let moneda of crypto">
+                <td><img [src]="moneda.image.small" [alt]="moneda.name"></td>
+                <td>{{moneda.name}}</td>
+                <td>EUR {{moneda.market_data.current_price.eur}}</td>
+                <td [ngStyle]="{'color': moneda.market_data.price_change_percentage_24h_in_currency.eur > 0 ? 'green' : 'red'}">{{moneda.market_data.price_change_percentage_24h_in_currency.eur}} %</td>
+                <td>{{moneda.market_data.market_cap.eur.toLocaleString()}} €</td>
+                <td>EUR {{moneda.market_data.total_volume.eur.toLocaleString()}}</td>
+                <td><button class="btn btn-primary" (click)="verDetalle(moneda.id)">Ver detalles</button></td>
+                <td><button class="btn btn-primary" (click)="borrarDiv(moneda.id)">X</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

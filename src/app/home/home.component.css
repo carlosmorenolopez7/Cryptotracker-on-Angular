@@ -1,0 +1,87 @@
+.home__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#primeraParteS1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.enlace__home__main {
+    color: blue;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    font-size: 30px;
+}
+
+#inputRegister {
+    display: flex;
+    gap: 10px;
+}
+
+#inputRegister input {
+    width: 100%;
+    padding: 20px;
+}
+
+#inputRegister button {
+    width: 50%;
+    margin: 0px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #004BEB;
+}
+
+.imagenHome img{
+    width: 100%;
+}
+
+.imagenMid {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.imagenMid h1 {
+    text-align: center;
+}
+
+.div_eligenos {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.div_eligenos h1 {
+    text-align: center;
+}
+
+.fotos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}

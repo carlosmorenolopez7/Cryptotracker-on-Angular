@@ -1,0 +1,17 @@
+footer {
+    background-color: rgb(0, 0, 0, 0.9);
+    margin-top: 10%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+a, a:visited{
+    color: green;
+    text-decoration: none;
+}
+
+a:active{
+    color: blue;
+}

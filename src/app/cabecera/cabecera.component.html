@@ -1,0 +1,31 @@
+<header>
+  <nav class="navbar bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Cryptocurrency_Logo.svg/3888px-Cryptocurrency_Logo.svg.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="portfolio" *ngIf="this.auth.isLoged" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="primeras" *ngIf="this.auth.isLoged" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login" *ngIf="!this.auth.isLoged" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <p *ngIf="this.auth.isLoged">Bienvenido, {{this.auth.isLoged.email}}</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="logout" *ngIf="this.auth.isLoged" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
